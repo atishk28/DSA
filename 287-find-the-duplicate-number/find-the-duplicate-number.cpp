@@ -6,7 +6,10 @@ public:
         int ans;
         for(int i=1;i<n;i++){
             int j=i-1;
-            if(nums[i]==nums[j]) ans=nums[i];
+            if(nums[i]==nums[j]){
+                ans=nums[i];
+                break;
+            }
         }
         return ans;
     }
