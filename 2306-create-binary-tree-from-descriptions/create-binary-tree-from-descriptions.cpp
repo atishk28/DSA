@@ -17,14 +17,14 @@ public:
         for(vector<int>& vec:descriptions){
             int parent=vec[0];
             int child=vec[1];
-            int isLeft=vec[2];
+            int left=vec[2];
             if(mp.find(parent)==mp.end()){
                 mp[parent]=new TreeNode(parent);
             }
             if(mp.find(child)==mp.end()){
                 mp[child]=new TreeNode(child);
             }
-            if(isLeft==1) mp[parent]->left=mp[child];
+            if(left==1) mp[parent]->left=mp[child];
             else mp[parent]->right=mp[child];
             set.insert(child);
         }
