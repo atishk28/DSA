@@ -1,7 +1,7 @@
 class Solution {
     vector<string> ans;
 
-    bool f2(string &s, int k) {
+    bool f2(string& s, int k) {
         int sum = 0;
 
         for(int i = 0; i < s.size(); i++) {
@@ -14,7 +14,7 @@ class Solution {
         return true;
     }
 
-    void f(int n, string &s, int l, int k) {
+    void f(int n, string& s, int l, int k) {
 
         if(l == n) {
             if(f2(s, k))
@@ -22,14 +22,19 @@ class Solution {
             return;
         }
 
-        // Always place 0
-        s.push_back('0');
-        f(n, s, l + 1, k);
-        s.pop_back();
-
-        // Place 1 only if previous is not 1
         if(s.empty() || s.back() != '1') {
+
+            s.push_back('0');
+            f(n, s, l + 1, k);
+            s.pop_back();
+
             s.push_back('1');
+            f(n, s, l + 1, k);
+            s.pop_back();
+        }
+        else {
+
+            s.push_back('0');
             f(n, s, l + 1, k);
             s.pop_back();
         }
