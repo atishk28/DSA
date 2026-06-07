@@ -13,14 +13,13 @@ class Solution {
 public:
     void f(TreeNode* root,vector<int>& vec){
         if(root==NULL) return;
-        vec.push_back(root->val);
         f(root->left,vec);
+        vec.push_back(root->val);
         f(root->right,vec);      
     }
     int kthSmallest(TreeNode* root, int k) {
         vector<int> vec; 
         f(root,vec);
-        sort(vec.begin(),vec.end());
         return vec[k-1];
     }
 };
