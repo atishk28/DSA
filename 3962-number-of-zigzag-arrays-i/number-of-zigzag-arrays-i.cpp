@@ -24,6 +24,6 @@ public:
             }
             flag=!flag;
         }
-        return ((accumulate(dp.begin(),dp.end(),0LL)%mod)<<1)%mod;
+        return (2LL*(accumulate(dp.begin(),dp.end(),0LL)))%mod;
     }
 };
