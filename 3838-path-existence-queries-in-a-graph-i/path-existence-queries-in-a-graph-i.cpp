@@ -9,11 +9,10 @@ public:
             }
             vec[i]=curr;
         }
-        vector<bool>qr;
-        qr.reserve(queries.size());
+        vector<bool> ans;
         for(vector<int>& it:queries){
-            qr.emplace_back(vec[it[0]]==vec[it[1]]);
+            ans.push_back(vec[it[0]]==vec[it[1]]);
         }
-        return qr;
+        return ans;
     }
 };
